@@ -91,6 +91,13 @@ app.post('/api/items', function(req, res){
   })
 })
 
+//update item
+app.put("/api/items/:title", function(req, res){
+  Item.findOneAndUpdate({title: req.params.title}, req.body, {new: true}).then(function(item){
+    res.json(item)
+  })
+})
+
 //delete item
 app.delete('/api/items/:title', function(req, res){
   Item.findOneAndRemove({title: req.params.title}).then(function(){

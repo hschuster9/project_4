@@ -1,11 +1,33 @@
 <h2>ITEM SHOW</h2>
-
+  <p><a data-ui-sref="index()"> Back </a></p>
 <div class="itemsShow">
-<h4>{{vm.item.title}}</h4>
-<img ng-src="{{vm.item.photo_url}}" alt="{{vm.item.title}}"/>
-<p>{{vm.item.description}}</p>
-<p>{{vm.item.maker}}</p>
-<p> ${{vm.item.price}}</p>
+  <h4>{{vm.item.title}}</h4>
+  <img ng-src="{{vm.item.photo_url}}" alt="{{vm.item.title}}"/>
+  <p>{{vm.item.description}}</p>
+  <p>{{vm.item.maker}}</p>
+  <p> ${{vm.item.price}}</p>
+    <button data-ng-click="showForm = ! showForm; showDiv=true" type="submit" ng-show="!showDiv">Edit</button>
 </div>
 
-<button data-ng-click="vm.destroy()" type="submit">Delete</button>
+
+
+<form data-ng-submit="vm.update()" data-ng-show="showForm">
+  <div>
+    <input type="text" data-ng-model="vm.item.title" placeholder="Title">
+  <div>
+  <div>
+    <input type="text" data-ng-model="vm.item.photo_url" placeholder="Photo Url">
+  </div>
+  <div>
+    <input type="text" data-ng-model="vm.item.maker" placeholder="Maker">
+  </div>
+  <div>
+    <input type="text" data-ng-model="vm.item.description" placeholder="Description">
+  </div>
+  <div>
+    <input type="text" data-ng-model="vm.item.price" placeholder="Price">
+  </div>
+
+    <button type="submit">Update</button>
+    <button data-ng-click="vm.destroy()" type="submit">Delete</button>
+  </form>
