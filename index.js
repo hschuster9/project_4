@@ -52,7 +52,7 @@ const app = express()
 
 const Item = mongoose.model("Item")
 
-app.set("port", process.env.PORT || 9111)
+app.set("port", process.env.PORT || 9000)
 app.set('view engine', 'hbs')
 app.engine(".hbs", hbs({
   extname: ".hbs",
@@ -65,21 +65,15 @@ app.use("/assets", express.static("public"))
 app.use(parser.json({extended: true}))
 
 //root url
-// app.get('/', function(req, res){
-//   res.render("items")
-// })
+app.get('/', function(req, res){
+  res.render("items")
+})
 
 
 //show all items
 app.get("/api/items", function(req, res){
   Item.find({}).then(function(items){
     res.json(items)
-  })
-})
-
-app.post("/api/items", function(req,res){
-  Item.create(req.body).then(function(item){
-    res.json(item)
   })
 })
 
@@ -90,8 +84,21 @@ app.get('/api/items/:title', function(req, res){
   })
 })
 
+//create new item
+app.post('/api/items', function(req, res){
+  Item.create(req.body).then(function(item){
+    res.json(item)
+  })
+})
 
-/
+//delete item
+app.delete('/api/items/:title', function(req, res){
+  Item.findOneAndRemove({title: req.params.title}).then(function(){
+    res.json({success: true})
+  })
+})
+
+
 app.listen(app.get("port"), function(){
-  console.log("Listening on Port 9111");
+  console.log("Listening on Port 9000");
 });

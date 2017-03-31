@@ -2,8 +2,10 @@
 
 <div class="itemsShow">
 <h4>{{vm.item.title}}</h4>
-<img ng-src="{{vm.item.photo_url}}"/>
+<img ng-src="{{vm.item.photo_url}}" alt="{{vm.item.title}}"/>
 <p>{{vm.item.description}}</p>
 <p>{{vm.item.maker}}</p>
 <p> ${{vm.item.price}}</p>
 </div>
+
+<button data-ng-click="vm.destroy()" type="submit">Delete</button>
