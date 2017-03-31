@@ -1,7 +1,11 @@
-<h2> ITEMS INDEX </h2>
-<button type="button" data-ui-sref="new()">Add Item</button>
-<div class="itemsContainer" ng-repeat="item in vm.items">
-  <p> {{item.title}}</p>
-  <a data-ui-sref="show({title: item.title})"><img ng-src="{{item.photo_url}}"/></a>
-  <p> {{item.upvote}}</p>
+<div class="mainContainer">
+  <h4> HOME </h4>
+  <button type="button" class="btn btn-success" data-ui-sref="new()">Add Item</button>
+  <br><br>
+  <div class="itemsContainer" ng-repeat="item in vm.items">
+    <p> {{item.title}}</p>
+    <a data-ui-sref="show({title: item.title})"><img class="indexImage" ng-src="{{item.photo_url}}"/></a>
+    <p> {{item.upvote}}</p>
+  </div>
+
 </div>
