@@ -65,9 +65,9 @@ app.use("/assets", express.static("public"))
 app.use(parser.json({extended: true}))
 
 //root url
-app.get('/', function(req, res){
-  res.render("items")
-})
+// app.get('/', function(req, res){
+//   res.render("items")
+// })
 
 
 //show all items
@@ -77,7 +77,11 @@ app.get("/api/items", function(req, res){
   })
 })
 
-
+app.post("/api/items", function(req,res){
+  Item.create(req.body).then(function(item){
+    res.json(item)
+  })
+})
 
 //show individual item
 app.get('/api/items/:title', function(req, res){

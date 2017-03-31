@@ -2,3 +2,9 @@ img {
   height: 130px;
   width: 130px;
 }
+
+.itemsShow {
+  height: 80px;
+  widht: 80px;
+  font-size: 14px;
+}
