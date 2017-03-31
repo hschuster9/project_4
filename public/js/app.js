@@ -77,14 +77,13 @@ function ItemNewControllerFunction(ItemFactory, $state){
 
 function ItemShowControllerFunction( ItemFactory, $state, $stateParams){
   this.item = ItemFactory.get({title: $stateParams.title})
+  this.destroy = function(){
+    this.item.$delete({ title: $stateParams.title}).then(function(){
+      $state.go("index")
+    })
+  }
   this.update = function(){
-      this.item.$update({ title: $stateParams.title}).then(function(){
-        $state.go("show")
-      })
+      this.item.$update({ title: $stateParams.title})
     }
-    this.destroy = function(){
-      this.item.$delete({ title: $stateParams.title}).then(function(){
-        $state.go("index")
-      })
-    }
+
   }
