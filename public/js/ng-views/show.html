@@ -6,9 +6,8 @@
   <p>{{vm.item.description}}</p>
   <p>{{vm.item.maker}}</p>
   <p> ${{vm.item.price}}</p>
-    <button data-ng-click="showForm = ! showForm; showDiv=true" type="submit" ng-show="!showDiv">Edit</button>
+    <button data-ng-click="showForm = ! showForm; showDiv=true" type="submit" ng-show="!showDiv; showEditButton=true">Edit</button>
 </div>
-
 
 
 <form data-ng-submit="vm.update()" data-ng-show="showForm">
@@ -28,6 +27,6 @@
     <input type="text" data-ng-model="vm.item.price" placeholder="Price">
   </div>
 
-    <button type="submit">Update</button>
+    <button data-ng-click="showForm = ! showForm; showDiv=true" ng-show="showDiv" type="submit">Update</button>
     <button data-ng-click="vm.destroy()" type="submit">Delete</button>
   </form>
