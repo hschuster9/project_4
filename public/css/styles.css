@@ -56,7 +56,7 @@ header a:hover{
 
 .form-horizontal {
   width: 400px;
-  margin-left: 970px;
+  margin-left: 920px;
   margin-top: 30px;
 
 }
@@ -73,8 +73,14 @@ header a:hover{
 
 .itemsContainer {
   font-size: 20px;
+  margin-top: 80px;
+  justify-content: center;
+  display: flex;
 }
 
+#well {
+  width: 600px;
+}
 .mainContainer {
   text-align: center;
   margin-top: 100px;
