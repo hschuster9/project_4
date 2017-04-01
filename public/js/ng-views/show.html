@@ -9,29 +9,29 @@
     <p>{{vm.item.description}}</p>
     <p>{{vm.item.maker}}</p>
     <p> ${{vm.item.price}}</p>
-    <button data-ng-click="showForm = ! showForm; showDiv=true" type="submit" ng-show="!showDiv; showEditButton=true">Edit</button>
+    <button class="btn-default" data-ng-click="showForm = ! showForm; showDiv=true" type="submit" ng-show="!showDiv; showEditButton=true">Edit</button>
   </div>
 </div>
 
-  <form class="editForm" data-ng-submit="vm.update()" data-ng-show="showForm">
+  <form class="form-horizontal" class="editForm" data-ng-submit="vm.update()" data-ng-show="showForm">
     <div>
-      <p>Title <input type="text" data-ng-model="vm.item.title" placeholder="Title"></p>
+      <p>Title <input  type="text" class="form-control" data-ng-model="vm.item.title" placeholder="Title"></p>
     </div>
     <div>
-      <p>Photo URL <input type="text" data-ng-model="vm.item.photo_url" placeholder="Photo Url"></p>
+      <p>Photo URL <input type="text" class="form-control" data-ng-model="vm.item.photo_url" placeholder="Photo Url"></p>
     </div>
     <div>
-      <p>Purchased From <input type="text" data-ng-model="vm.item.maker" placeholder="Maker"></p>
+      <p>Purchased From <input type="text" class="form-control" data-ng-model="vm.item.maker" placeholder="Maker"></p>
     </div>
     <div>
-      <p>Description <input type="text" data-ng-model="vm.item.description" placeholder="Description"></p>
+      <p>Description <input type="text"  class="form-control" data-ng-model="vm.item.description" placeholder="Description"></p>
     </div>
     <div>
-      <p>Price <input type="text" data-ng-model="vm.item.price" placeholder="Price"></p>
+      <p>Price <input type="text"  class="form-control" data-ng-model="vm.item.price" placeholder="Price"></p>
     </div>
 
-      <button data-ng-click="showForm = ! showForm; showDiv=true" ng-show="showDiv" type="submit">Update</button>
-      <button data-ng-click="vm.destroy()" type="submit">Delete</button>
+      <button class="btn-primary" data-ng-click="showForm = ! showForm; showDiv=true" ng-show="showDiv" type="submit">Update</button>
+      <button class="btn-danger" data-ng-click="vm.destroy()" type="submit">Delete</button>
     </form>
 
 </div>

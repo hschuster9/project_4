@@ -1,21 +1,24 @@
-<h2> Add Item</h2>
-<a data-ui-sref="index()"> Back </a>
+<div class="mainContainer">
+<a data-ui-sref="index()"> Back </a><br><br>
 
-<form data-ng-submit="vm.create()">
-<div>
-  <input type="text" data-ng-model="vm.item.title" placeholder="Title">
-<div>
-<div>
-  <input type="text" data-ng-model="vm.item.photo_url" placeholder="Photo Url">
+<div class="newFormContainer">
+  <form class="form-group" data-ng-submit="vm.create()">
+  <div>
+    <input type="text" class="form-control" data-ng-model="vm.item.title" placeholder="Title">
+  <div>
+  <div>
+    <input type="text" class="form-control" data-ng-model="vm.item.photo_url" placeholder="Photo Url">
+  </div>
+  <div>
+    <input type="text" class="form-control" data-ng-model="vm.item.maker" placeholder="Maker">
+  </div>
+  <div>
+    <input type="text" class="form-control" data-ng-model="vm.item.description" placeholder="Description">
+  </div>
+  <div>
+    <input type="text" class="form-control" data-ng-model="vm.item.price" placeholder="Price">
+  </div><br>
+  <button type="submit" class="btn-success">Create</button>
+  </form>
 </div>
-<div>
-  <input type="text" data-ng-model="vm.item.maker" placeholder="Maker">
 </div>
-<div>
-  <input type="text" data-ng-model="vm.item.description" placeholder="Description">
-</div>
-<div>
-  <input type="text" data-ng-model="vm.item.price" placeholder="Price">
-</div>
-  <button type="submit">Create</button>
-</form>
