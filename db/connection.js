@@ -1,16 +1,8 @@
 const mongoose = require('mongoose')
-
-const ItemSchema = new mongoose.Schema({
-  title: String,
-  photo_url: String,
-  upvotes: Number,
-  maker: String,
-  description: String,
-  price: Number
-})
+const db = mongoose.connection
 
 
-mongoose.model("Item", ItemSchema)
+
 
 mongoose.connect('mongodb://localhost/project4', err =>{
   if(err){

@@ -1,13 +1,16 @@
-const mongoose = require('./connection')
-const seedData = require('./seeds.json')
-const Item = mongoose.model("Item")
+const Item = require("./models.js").Item
+const Review = require('./models.js').Review
 
-
-
-
-
-Item.remove({}).then(function(){
-  Item.collection.insert(seedData).then(function(){
-    process.exit()
+Item.remove({}, err =>{
+  if(err){
+    console.log(err)
+  }
 })
+
+Review.remove({}, err => {
+  if(err) {
+    console.log(err){
+      console.log(err)
+    }
+  }
 })
