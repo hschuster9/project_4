@@ -1,0 +1,24 @@
+<div class="mainContainer">
+<a data-ui-sref="ItemIndex()"> Back </a><br><br>
+
+<div class="newFormContainer">
+  <form class="form-group" data-ng-submit="vm.create()">
+  <div>
+    <input type="text" class="form-control" data-ng-model="vm.newItem.title" placeholder="Title">
+  <div>
+  <div>
+    <input type="text" class="form-control" data-ng-model="vm.newItem.photo_url" placeholder="Photo Url">
+  </div>
+  <div>
+    <input type="text" class="form-control" data-ng-model="vm.newItem.maker" placeholder="Maker">
+  </div>
+  <div>
+    <input type="text" class="form-control" data-ng-model="vm.newItem.description" placeholder="Description">
+  </div>
+  <div>
+    <input type="text" class="form-control" data-ng-model="vm.newIitem.price" placeholder="Price">
+  </div><br>
+  <button type="submit" class="btn-success">Create</button>
+  </form>
+</div>
+</div>

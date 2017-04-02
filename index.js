@@ -50,7 +50,9 @@ const mongoose = require('./db/connection')
 
 const app = express()
 
-const Item = mongoose.model("Item")
+
+const Item = require("./db/models.js").Item
+const Review = require('./db/models.js').Review
 
 app.set("port", process.env.PORT || 8000)
 app.set('view engine', 'hbs')
@@ -78,8 +80,8 @@ app.get("/api/items", function(req, res){
 })
 
 //show individual item
-app.get('/api/items/:title', function(req, res){
-  Item.findOne({title: req.params.title}).then(function(item){
+app.get('/api/items/:id', function(req, res){
+  Item.findOne({_id: req.params.id}).then(function(item){
     res.json(item)
   })
 })
@@ -92,20 +94,45 @@ app.post('/api/items', function(req, res){
 })
 
 //update item
-app.put("/api/items/:title", function(req, res){
-  Item.findOneAndUpdate({title: req.params.title}, req.body, {new: true}).then(function(item){
+app.put("/api/items/:id", function(req, res){
+  Item.findOneAndUpdate({_id: req.params.id}, req.body, {new: true}).then(function(item){
     res.json(item)
   })
 })
 
 //delete item
-app.delete('/api/items/:title', function(req, res){
-  Item.findOneAndRemove({title: req.params.title}).then(function(){
+app.delete('/api/items/:id', function(req, res){
+  Item.findOneAndRemove({_id: req.params.id}).then(function(){
     res.json({success: true})
   })
 })
 
 
+
+//review routes
+app.get("/api/items/:item_id/reviews", function(req, res){
+  Item.findOne({_id: req.params.item_id}).then(function(){
+    res.json(item)
+  })
+})
+
+app.post("/api/items/:item_id/reviews", function(req, res){
+  Item.findOne({_id: req.params.item_id}).then(function(){
+    res.json(item)
+  })
+})
+
+
+app.put("/api/items/:item_id", function(req, res){
+  Item.findOne({_id: req.params.item_id}).then(function(){
+    Review.create({author: req.body.author, content: req.body.content}).then((item)=>{
+  })
+})
+})
+
+
+
+
 app.listen(app.get("port"), function(){
   console.log("Listening on Port 8000");
-});
+})

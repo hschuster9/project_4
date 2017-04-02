@@ -1,4 +1,4 @@
-const mongoose = requre('./connection.js')
+const mongoose = require('./connection.js')
 
 
 const ReviewSchema = new mongoose.Schema({

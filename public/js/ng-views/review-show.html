@@ -1,0 +1,36 @@
+<h1>Reviews</h1>
+
+<p>{{vm.item.title}}</p>
+<img ng-src="{{vm.item.photo_url}}" alt="item photo" />
+<p>{{vm.item.maker}}</p>
+<p>{{vm.item.description}}</p>
+<p>{{vm.item.price}}</p>
+<br>
+
+<button ng-click="editItem = !editItem"> Edit </button>
+<div ng-show="editItem">
+  <form>
+    <input type="text" ng-model="vm.item.title" placeholder="Title">
+    <input type="text" ng-model="vm.item.photo_url" placeholder="Photo Url">
+    <input type="text" ng-model="vm.item.maker" placeholder="Maker">
+    <input type="text" ng-model="vm.item.description" placeholder="description">
+    <input type="text" ng-model="vm.item.price" placeholder="Price">
+
+    <button ng-click="vm.update()"> Update </button>
+  </form>
+    <button ng-click="vm.remove()"> Delete </button>
+</div>
+
+
+
+<div class="show-review" ng-repeat="review in vm.reviews">
+  <span>{{review.content}}</span><br>
+  <span class="author">Review by: {{review.author}}</span>
+</div>
+
+
+<form ng-submit="vm.review.create()">
+  <input type="text" id="name" ng-model="vm.review.author" placeholder="Your Name" />
+  <input type="text" id="content" ng-model="vm.review.content" placeholder="Write your caption here!" />
+  <button type="submit">Submit</button>
+</form>

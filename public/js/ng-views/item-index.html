@@ -1,0 +1,31 @@
+<div class="mainContainer">
+  <h4> HOME </h4>
+  <button type="button" class="btn btn-success" data-ui-sref="ItemNew()">Add Item</button>
+  <br><br>
+
+  <div class="itemsContainer" ng-repeat="item in vm.items">
+      <div class="well well-sm" id="well">
+    <p> {{item.title}}</p>
+    <a data-ui-sref="ItemShow({item_id: item._id})"><img class="indexImage" ng-src="{{item.photo_url}}"/></a>
+    <p> {{item.upvote}}</p>
+    </div>
+  </div>
+
+</div>
+
+<!-- <br><br><br><br>
+<h2> HOME </h2>
+<button ng-click="createItem = !createItem"> Add Item </button>
+<div ng-show="createItem">
+<form ng-submit="vm.create()">
+  <input type="text" ng-model="vm.newItem.photo_url" placeholder="Photo Url">
+  <input type="text" ng-model="vm.newItem.alt" placeholder="alt">
+  <button type='submit'> Create </button>
+</form>
+</div>
+
+<div class='items'>
+  <div data-ng-repeat="item in vm.items">
+    <a data-ui-sref="reviewShow({item_id: item._id})"><img src="{{item.photo_url}}" alt="item image"></a>
+  </div>
+</div> -->
