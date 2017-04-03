@@ -49,6 +49,7 @@ const parser = require('body-parser')
 const mongoose = require('./db/connection')
 
 const app = express()
+const router = express.Router()
 
 const Item = mongoose.model("Item")
 
@@ -80,6 +81,22 @@ app.get("/api/items", function(req, res){
 //show individual item
 app.get('/api/items/:title', function(req, res){
   Item.findOne({title: req.params.title}).then(function(item){
+    res.json(item)
+  })
+})
+
+
+//increase upvote
+app.put('/api/items/upvote', function(req, res, next){
+  req.item.upvote(function(err, item){
+    if(err){return next(err)}
+    res.json(item)
+  })
+})
+
+router.put('/items/:title/upvote', function(req, res, next){
+  req.item.upvote(function(err, item){
+    if(err) {return next(err)}
     res.json(item)
   })
 })

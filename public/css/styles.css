@@ -100,3 +100,7 @@ header a:hover{
 .backLink {
   font-size: 16px;
 }
+
+#heart:hover{
+  color: red;
+}

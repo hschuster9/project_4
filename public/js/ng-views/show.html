@@ -6,7 +6,7 @@
   <div class="itemsShow">
     <h4>{{vm.item.title}}</h4>
     <img class="showImage" ng-src="{{vm.item.photo_url}}" alt="product image"/>
-    <p>{{vm.item.description}}</p>
+    <br><br><p>{{vm.item.description}}</p>
     <p>{{vm.item.maker}}</p>
     <p> ${{vm.item.price}}</p>
     <button class="btn-default" data-ng-click="showForm = ! showForm; showDiv=true" type="submit" ng-show="!showDiv; showEditButton=true">Edit</button>

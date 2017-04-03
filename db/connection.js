@@ -3,12 +3,16 @@ const mongoose = require('mongoose')
 const ItemSchema = new mongoose.Schema({
   title: String,
   photo_url: String,
-  upvotes: Number,
+  upvotes: {type: Number, default: 0},
   maker: String,
   description: String,
   price: Number
 })
 
+ItemSchema.methods.upvote = function(cb){
+  this.upvotes += 1;
+  this.save(cb)
+}
 
 mongoose.model("Item", ItemSchema)
 
