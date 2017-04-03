@@ -9,11 +9,13 @@ angular
 ])
 .factory("ItemFactory", [
   "$resource",
+  "$http",
   ItemFactoryFunction
 ])
 .controller("ItemIndexController", [
   "ItemFactory",
   "$state",
+  "$scope",
   ItemIndexControllerFunction
 ])
 .controller("ItemNewController", [
@@ -55,17 +57,32 @@ function RouterFunction($stateProvider){
   })
 }
 
-function ItemFactoryFunction( $resource){
+function ItemFactoryFunction( $resource, $http){
   return $resource("/api/items/:title", {}, {
     update: {method: "PUT"}
   })
+  var items_array = {
+    items: []
+  }
+  items_array.upvote = function(item){
+    return $http.put('/items/'+ item.title+"/upvote").success(function(data){
+    item.upvotes += 1
+  })
+}
+  return items_array
 }
 
-function ItemIndexControllerFunction(ItemFactory, $state){
+function ItemIndexControllerFunction(ItemFactory, $state, $scope){
   this.items = ItemFactory.query()
+  $scope.items = ItemFactory.items
+  $scope.increaseUpvotes = function(item){
+      item.upvotes +=1
+  }
+
 }
 
 function ItemNewControllerFunction(ItemFactory, $state){
+
   this.item = new ItemFactory()
   this.create = function(){
     this.item.$save().then(function(item){

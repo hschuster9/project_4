@@ -8,6 +8,10 @@
     <p> {{item.title}}</p>
     <a data-ui-sref="show({title: item.title})"><img class="indexImage" ng-src="{{item.photo_url}}"/></a>
     <p> {{item.upvote}}</p>
+
+    <!--added-->
+    <span class="glyphicon glyphicon-heart-empty" ng-click="increaseUpvotes(item)"> </span> {{item.upvotes}}
+    <!--added-->
     </div>
   </div>
 

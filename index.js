@@ -84,6 +84,22 @@ app.get('/api/items/:title', function(req, res){
   })
 })
 
+
+//increase upvote
+app.put('/api/items/:title/upvote', function(req, res, next){
+  req.item.upvote(function(err, item){
+    if(err){return next(err)}
+    res.json(item)
+  })
+})
+
+router.put('/items/:title/upvote', function(req, res, next){
+  req.item.upvote(function(err, item){
+    if(err) {return next(err)}
+    res.json(item)
+  })
+})
+
 //create new item
 app.post('/api/items', function(req, res){
   Item.create(req.body).then(function(item){
