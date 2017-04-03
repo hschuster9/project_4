@@ -3,7 +3,7 @@ const mongoose = require('mongoose')
 const ItemSchema = new mongoose.Schema({
   title: String,
   photo_url: String,
-  upvotes: Number,
+  upvotes: {type: Number, default: 0}
   maker: String,
   description: String,
   price: Number
