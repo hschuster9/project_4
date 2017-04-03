@@ -3,14 +3,14 @@
   <button type="button" class="btn btn-success" data-ui-sref="new()">Add Item</button>
   <br><br>
 
-  <div class="itemsContainer" ng-repeat="item in vm.items">
+  <div class="itemsContainer" ng-repeat="item in vm.items | orderBy: '-upvotes'">
       <div class="well well-sm" id="well">
     <p> {{item.title}}</p>
     <a data-ui-sref="show({title: item.title})"><img class="indexImage" ng-src="{{item.photo_url}}"/></a>
-    <p> {{item.upvote}}</p>
+    <!-- <p> {{item.upvote}}</p> -->
 
     <!--added-->
-    <span class="glyphicon glyphicon-heart-empty" ng-click="increaseUpvotes(item)"> </span> {{item.upvotes}}
+    <p><span class="glyphicon glyphicon-heart-empty" id="heart" ng-click="increaseUpvotes(item)"> </span> {{item.upvotes}}</p>
     <!--added-->
     </div>
   </div>

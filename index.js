@@ -49,6 +49,7 @@ const parser = require('body-parser')
 const mongoose = require('./db/connection')
 
 const app = express()
+const router = express.Router()
 
 const Item = mongoose.model("Item")
 
@@ -86,7 +87,7 @@ app.get('/api/items/:title', function(req, res){
 
 
 //increase upvote
-app.put('/api/items/:title/upvote', function(req, res, next){
+app.put('/api/items/upvote', function(req, res, next){
   req.item.upvote(function(err, item){
     if(err){return next(err)}
     res.json(item)
