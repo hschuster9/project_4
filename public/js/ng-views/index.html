@@ -1,5 +1,5 @@
 <div class="mainContainer">
-  <h4> HOME </h4>
+  
   <button type="button" class="btn btn-success" data-ui-sref="new()">Add Item</button>
   <br><br>
 
@@ -10,7 +10,7 @@
     <!-- <p> {{item.upvote}}</p> -->
 
     <!--added-->
-    <p><span class="glyphicon glyphicon-heart-empty" id="heart" ng-click="increaseUpvotes(item)"> </span> {{item.upvotes}}</p>
+    <p class="heartAndUpvote"><span class="glyphicon glyphicon-heart-empty" id="heart" ng-click="increaseUpvotes(item)"> </span> {{item.upvotes}}</p>
     <!--added-->
     </div>
   </div>

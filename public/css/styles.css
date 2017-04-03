@@ -38,7 +38,7 @@ header a:hover{
 .itemsShowContainer {
   justify-content: center;
   display: flex;
-  margin-top: 50px;
+  margin-top: 20px;
 }
 .itemsShow {
   height: 480px;
@@ -73,17 +73,17 @@ header a:hover{
 
 .itemsContainer {
   font-size: 20px;
-  margin-top: 80px;
+  margin-top: 60px;
   justify-content: center;
   display: flex;
 }
 
 #well {
-  width: 600px;
+  width: 500px;
 }
 .mainContainer {
   text-align: center;
-  margin-top: 100px;
+  margin-top: 80px;
 }
 
 
@@ -103,4 +103,8 @@ header a:hover{
 
 #heart:hover{
   color: red;
+}
+
+.heartAndUpvote {
+  margin-top: 14px;
 }
