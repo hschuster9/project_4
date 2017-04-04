@@ -75,6 +75,25 @@ router.put('/items/:title/upvote', function(req, res, next){
 
 })
 
+
+
+
+//increase upvote?
+app.put('/api/items', function(req, res, next){
+  Item.findOne({upvotes: req.params.upvotes}).then(function(item){
+  req.item.upvote(function(err, item){
+    if(err){return next(err)}
+    res.json(item)
+    console.log('test')
+  })
+
+})
+
+
+
+
+
+
 //create new item
 app.post('/api/items', function(req, res){
   Item.create(req.body).then(function(item){
