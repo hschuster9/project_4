@@ -117,6 +117,7 @@ function ItemShowControllerFunction( ItemFactory, $state, $stateParams){
  ])
  .config([
   "$stateProvider",
+  "$urlRouterProvider",
   RouterFunction
  ])
  .factory("ItemFactory", [
@@ -143,12 +144,8 @@ function ItemShowControllerFunction( ItemFactory, $state, $stateParams){
  ])
 
 
- function RouterFunction($stateProvider){
+ function RouterFunction($stateProvider, $urlRouterProvider){
   $stateProvider
-  .state("welcome", {
-    url: "/",
-    templateUrl: "/assets/js/ng-views/welcome.html"
-  })
   .state("index", {
     url: "/items",
     templateUrl: "/assets/js/ng-views/index.html",
@@ -167,6 +164,7 @@ function ItemShowControllerFunction( ItemFactory, $state, $stateParams){
     controller: "ItemShowController",
     controllerAs: "vm"
   })
+  $urlRouterProvider.otherwise("items")
  }
 
  function ItemFactoryFunction( $resource, $http){
@@ -174,17 +172,6 @@ function ItemShowControllerFunction( ItemFactory, $state, $stateParams){
     update: {method: "PUT"}
   })
 }
- //  var items_array = {
- //    items: []
- //  }
- //  items_array.upvote = function(item){
- //    return $http.put('/items/'+ item.title+"/upvote").success(function(data){
- //    item.upvotes += 1
- //
- //  })
- // }
- //  return items_array
- // }
 
  function ItemIndexControllerFunction(ItemFactory, $state, $scope){
   this.items = ItemFactory.query()
