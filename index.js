@@ -41,7 +41,7 @@ app.get('/api/items/:title', function(req, res){
 })
 
 
-//increase upvote
+//increase upvote?
 app.put('/api/items/upvote', function(req, res, next){
   req.item.upvote(function(err, item){
     if(err){return next(err)}
@@ -49,6 +49,16 @@ app.put('/api/items/upvote', function(req, res, next){
   })
 })
 
+//increase upvote?
+app.put('/api/items/:title/upvote', function(req, res, next){
+  req.item.upvote(function(err, item){
+    if(err){return next(err)}
+    res.json(item)
+  })
+})
+
+
+//increase upvote?
 router.put('/items/:title/upvote', function(req, res, next){
   req.item.upvote(function(err, item){
     if(err) {return next(err)}
