@@ -67,6 +67,7 @@ function ItemFactoryFunction( $resource, $http){
   items_array.upvote = function(item){
     return $http.put('/items/'+ item.title+"/upvote").success(function(data){
     item.upvotes += 1
+
   })
 }
   return items_array
@@ -77,6 +78,11 @@ function ItemIndexControllerFunction(ItemFactory, $state, $scope){
   $scope.items = ItemFactory.items
   $scope.increaseUpvotes = function(item){
       item.upvotes +=1
+      // this.item.update= function(){
+      //   this.item.$update({title: $stateParam.title})
+      //   console.log("test")
+      // }
+
   }
 
 }
@@ -86,8 +92,10 @@ function ItemNewControllerFunction(ItemFactory, $state){
   this.item = new ItemFactory()
   this.create = function(){
     this.item.$save().then(function(item){
+
       $state.go("show", { title: item.title})
     })
+
 
   }
 }
