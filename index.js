@@ -30,6 +30,7 @@ app.get('/', function(req, res){
 app.get("/api/items", function(req, res){
   Item.find({}).then(function(items){
     res.json(items)
+      console.log('test')
   })
 })
 
@@ -37,7 +38,9 @@ app.get("/api/items", function(req, res){
 app.get('/api/items/:title', function(req, res){
   Item.findOne({title: req.params.title}).then(function(item){
     res.json(item)
+
   })
+
 })
 
 
@@ -46,6 +49,7 @@ app.put('/api/items/upvote', function(req, res, next){
   req.item.upvote(function(err, item){
     if(err){return next(err)}
     res.json(item)
+    console.log('test')
   })
 })
 
@@ -54,6 +58,7 @@ app.put('/api/items/:title/upvote', function(req, res, next){
   req.item.upvote(function(err, item){
     if(err){return next(err)}
     res.json(item)
+    console.log('test')
   })
 })
 
@@ -63,6 +68,7 @@ router.put('/items/:title/upvote', function(req, res, next){
   req.item.upvote(function(err, item){
     if(err) {return next(err)}
     res.json(item)
+    console.log('test')
   })
 })
 
