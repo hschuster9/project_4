@@ -4,11 +4,12 @@ font-family: 'Muli', sans-serif;
 }
 
 header {
-  font-size: 24px;
+  font-size: 40px;
+
   text-align: center;
   background-color: #ff4444;
   position: fixed;
-  height: 60px;
+  height: 75px;
   width: 100vw;
   top: 0;
   left: 0;
