@@ -30,7 +30,7 @@ app.get('/', function(req, res){
 app.get("/api/items", function(req, res){
   Item.find({}).then(function(items){
     res.json(items)
-      console.log('test')
+
   })
 })
 
@@ -51,6 +51,7 @@ app.put('/api/items/upvote', function(req, res, next){
     res.json(item)
     console.log('test')
   })
+
 })
 
 //increase upvote?
@@ -60,6 +61,7 @@ app.put('/api/items/:title/upvote', function(req, res, next){
     res.json(item)
     console.log('test')
   })
+
 })
 
 
@@ -70,6 +72,7 @@ router.put('/items/:title/upvote', function(req, res, next){
     res.json(item)
     console.log('test')
   })
+
 })
 
 //create new item
