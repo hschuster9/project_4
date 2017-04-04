@@ -1,11 +1,11 @@
 [
   {
-    "title": "Scallop Shirt",
+    "title": "Scallop Top",
     "photo_url": "http://g.nordstromimage.com/ImageGallery/store/product/Zoom/3/_9956483.jpg",
     "upvotes": 0,
     "maker": "J.Crew",
     "description": "This top is comfortable and simple",
-    "price": 40
+    "price": 60
   },
 
   {
@@ -24,6 +24,33 @@
     "maker": "Nordstrom",
     "description": "Perfect for a night out",
     "price": 180
+  },
+
+  {
+    "title": "Linen Trouser Shorts",
+    "photo_url": "https://s-media-cache-ak0.pinimg.com/564x/2a/54/6e/2a546ed451493e4040bd1aa1286f6216.jpg",
+    "upvotes": 0,
+    "maker": "Level 99",
+    "description": "Cute shorts to dress up or down",
+    "price": 70
+  },
+
+  {
+    "title": "Romper",
+    "photo_url": "https://4.bp.blogspot.com/-YvBpqQ3qhQ4/V3vURZ-L2OI/AAAAAAAAUMs/yJ7E5E7kMZouyY_HTLY7oJG4eG1Jss-5wCLcB/s1600/181047-WHTM-a-%255Bfront%255D-l1_large.jpg",
+    "upvotes": 0,
+    "maker": "Abbeline",
+    "description": "Perfect staple for the summer",
+    "price": 130
+  },
+
+  {
+    "title": "Loose Top",
+    "photo_url": "https://s-media-cache-ak0.pinimg.com/736x/bc/e0/1d/bce01d26d806c8d097c474c0e6ed1683.jpg",
+    "upvotes": 0,
+    "maker": "Free People",
+    "description": "Pair with jeans or leggings",
+    "price": 95
   }
 
 
