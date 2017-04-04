@@ -77,6 +77,9 @@ function ItemIndexControllerFunction(ItemFactory, $state, $scope){
   $scope.items = ItemFactory.items
   $scope.increaseUpvotes = function(item){
       item.upvotes +=1
+      this.item.update= function(){
+        this.item.$update({title: $stateParam.title})
+      }
   }
 
 }
