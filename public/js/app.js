@@ -75,14 +75,11 @@ angular
  }
 
  function ItemNewControllerFunction(ItemFactory, $state){
-
   this.item = new ItemFactory()
   this.create = function(){
     this.item.$save().then(function(item){
       $state.go("show", { title: item.title})
     })
-
-
   }
  }
 
@@ -93,8 +90,7 @@ angular
       $state.go("index")
     })
   }
-  this.update = function(){
-      this.item.$update({ title: $stateParams.title})
+    this.update = function(){
+        this.item.$update({ title: $stateParams.title})
     }
-
   }

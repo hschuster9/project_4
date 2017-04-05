@@ -1,7 +1,7 @@
 # Style It
 
 ## Overview
-Style It is a web application designed to allow users to showcase fashion items that they like. Users can view the item's details and show that they like the item by "upvoting" them, which will display the most popular ones at the top of the page. 
+Style It is a web application designed to allow users to showcase their favorite fashion items. Users can view the item's details and show that they like the item by "upvoting" them, which will display the most popular ones at the top of the page. 
 
 
 ## Technologies Used
