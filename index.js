@@ -36,10 +36,11 @@ app.get("/api/items", function(req, res){
 //show individual item
 app.get('/api/items/:title', function(req, res){
  Item.findOne({title: req.params.title}).then(function(item){
+   req.item.populate("reviews", function(err, item){
    res.json(item)
 
  })
-
+})
 })
 
 //increase upvote

@@ -6,7 +6,14 @@ const ItemSchema = new mongoose.Schema({
   upvotes: {type: Number, default: 0},
   maker: String,
   description: String,
-  price: Number
+  price: Number,
+  reviews: [{type: mongoose.Schema.Types.ObjectId, ref: "Review"}]
+})
+
+const ReviewSchema = new mongoose.Schema({
+  author: String,
+  content: String,
+  item: {type: mongoose.Schema.Types.ObjectId, ref: "Item"}
 })
 
 ItemSchema.methods.upvote = function(cb){

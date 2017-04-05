@@ -5,7 +5,14 @@
     "upvotes": 0,
     "maker": "J.Crew",
     "description": "This top is comfortable and simple",
-    "price": 60
+    "price": 60,
+    "reviews": [
+      {
+        "author": "Mary",
+        "content": "Love this!"
+      }
+    ]
+
   },
 
   {
@@ -14,7 +21,14 @@
     "upvotes": 0,
     "maker": "The Horse",
     "description": "Love the rose gold and leather band",
-    "price": 140
+    "price": 140,
+    "reviews": [
+      {
+        "author": "Kate",
+        "content": "Just bought this too!"
+      }
+    ]
+
   },
 
   {
