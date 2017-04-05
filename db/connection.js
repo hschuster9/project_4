@@ -16,13 +16,20 @@ ItemSchema.methods.upvote = function(cb){
 
 mongoose.model("Item", ItemSchema)
 
-mongoose.connect('mongodb://localhost/project4', err =>{
-  if(err){
-    console.log(err)
-  }
-  else {
-    console.log("Connected to MongoDB")
-  }
-})
+// mongoose.connect('mongodb://localhost/project4', err =>{
+//   if(err){
+//     console.log(err)
+//   }
+//   else {
+//     console.log("Connected to MongoDB")
+//   }
+// })
+
+
+if(process.env.NODE_ENV == "production"){
+  mongoose.connect(process.env.MONGOLAB_URL);
+}else{
+  mongoose.connect("mongodb://localhost/project4");
+}
 
 module.exports = mongoose
