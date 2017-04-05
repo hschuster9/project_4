@@ -27,7 +27,7 @@ mongoose.model("Item", ItemSchema)
 
 
 if(process.env.NODE_ENV == "production"){
-  mongoose.connect(process.env.MONGOLAB_URL);
+  mongoose.connect(process.env.MONGODB_URL);
 }else{
   mongoose.connect("mongodb://localhost/project4");
 }
