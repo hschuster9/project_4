@@ -39,7 +39,6 @@ app.get('/api/items/:title', function(req, res){
    res.json(item)
 
  })
-
 })
 
 //increase upvote
