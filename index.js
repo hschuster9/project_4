@@ -6,8 +6,10 @@ const mongoose = require('./db/connection')
 const app = express()
 const router = express.Router()
 
+//pulling model from schema
 const Item = mongoose.model("Item")
 
+//hosted port
 app.set("port", process.env.PORT || 3001)
 app.set('view engine', 'hbs')
 app.engine(".hbs", hbs({
@@ -17,6 +19,7 @@ app.engine(".hbs", hbs({
  defaultLayout: "layout-main"
 }))
 
+//public folder renamed as assets
 app.use("/assets", express.static("public"))
 app.use(parser.json({extended: true}))
 

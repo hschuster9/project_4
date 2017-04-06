@@ -52,12 +52,14 @@ angular
     controller: "ItemShowController",
     controllerAs: "vm"
   })
+  //redirects to /items url if url not found
   $urlRouterProvider.otherwise("items")
  }
 
  function ItemFactoryFunction( $resource, $http){
   return $resource("/api/items/:title/:action", {}, {
     update: {method: "PUT"}
+    //:action = upvotes
   })
 }
 
