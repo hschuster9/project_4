@@ -5,11 +5,10 @@ font-family: 'Muli', sans-serif;
 
 header {
   font-size: 40px;
-
   text-align: center;
   background-color: #ff4444;
   position: fixed;
-  height: 75px;
+  height: 88px;
   width: 100vw;
   top: 0;
   left: 0;
@@ -19,7 +18,7 @@ header {
   align-items: center;
   justify-content: space-between;
   font-family: 'Muli', sans-serif;
-  padding-top: 8px;
+  padding-top: 16px;
 
 }
 
@@ -32,7 +31,9 @@ header a:hover{
   color: #dddddd;
 }
 
-
+.detailsHeader {
+  padding-top: 40px;
+}
 .showImage {
   height: 350px;
   width: 350px;
