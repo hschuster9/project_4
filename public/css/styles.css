@@ -108,7 +108,7 @@ header a:hover{
 }
 
 
-@media only screen and (max-width: 1430px){
+@media only screen and (max-width: 1690px){
 .indexContainer {
   display: flex;
   flex-wrap: wrap;
