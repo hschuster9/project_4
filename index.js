@@ -10,7 +10,7 @@ const router = express.Router()
 const Item = mongoose.model("Item")
 
 //hosted port
-app.set("port", process.env.PORT || 3001)
+app.set("port", process.env.PORT || 3002)
 app.set('view engine', 'hbs')
 app.engine(".hbs", hbs({
  extname: ".hbs",
@@ -80,5 +80,5 @@ app.delete('/api/items/:title', function(req, res){
 
 
 app.listen(app.get("port"), function(){
- console.log("Listening on Port 3001");
+ console.log("Listening on Port 3002");
 });
