@@ -126,14 +126,25 @@ header a:hover{
   width: 250px;
 }
 
-.backLink {
+.backLink > a {
   font-size: 16px;
+  color: #00b2a0;
+
 }
 
+.backLink > a:hover {
+  text-decoration: none;
+}
+
+
 #heart:hover{
-  color: red;
+  color: #f5c1c1;
 }
 
 .heartAndUpvote {
   margin-top: 14px;
+}
+
+.glyphicon {
+  color: #fd4000;
 }

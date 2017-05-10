@@ -11,7 +11,7 @@
     <div class="well well-sm" id="well">
       <p> {{item.title}}</p>
       <a data-ui-sref="show({title: item.title})"><img class="indexImage" ng-src="{{item.photo_url}}"/></a>
-      <p class="heartAndUpvote"><span class="glyphicon glyphicon-heart-empty" id="heart" ng-click="increaseUpvotes(item)"> </span> {{item.upvotes}}</p>
+      <p class="heartAndUpvote"><span class="glyphicon glyphicon-heart" id="heart" ng-click="increaseUpvotes(item)"> </span> {{item.upvotes}}</p>
     </div>
   </div>
 
