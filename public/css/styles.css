@@ -107,6 +107,14 @@ header a:hover{
   display: flex;
 }
 
+
+.indexContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+
+}
+
 #well {
   width: 400px;
 }

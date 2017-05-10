@@ -7,6 +7,7 @@
     <input type='text'  id="search" class="form-control" ng-model="searchBox" placeholder="Search Items">
   </div>
 
+<div class="indexContainer">
   <div class="itemsContainer" ng-repeat="item in vm.items | filter: searchBox | orderBy: '-upvotes'">
     <div class="well well-sm" id="well">
       <p> {{item.title}}</p>
@@ -14,5 +15,6 @@
       <p class="heartAndUpvote"><span class="glyphicon glyphicon-heart" id="heart" ng-click="increaseUpvotes(item)"> </span> {{item.upvotes}}</p>
     </div>
   </div>
+</div>
 
 </div>
