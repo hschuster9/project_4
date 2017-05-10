@@ -100,6 +100,7 @@ header a:hover{
   text-align: center;
 }
 
+
 .itemsContainer {
   font-size: 20px;
   margin-top: 60px;
@@ -108,16 +109,20 @@ header a:hover{
 }
 
 
+@media only screen and (max-width: 1430px){
 .indexContainer {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
 
+
+}
 }
 
 #well {
-  width: 400px;
+  width: 350px;
 }
+
 .mainContainer {
   text-align: center;
   margin-top: 80px;
@@ -130,8 +135,8 @@ header a:hover{
 }
 
 .indexImage {
-  height: 250px;
-  width: 250px;
+  height: 210px;
+  width: 210px;
 }
 
 .backLink > a {
